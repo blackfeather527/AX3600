@@ -17,7 +17,7 @@ sed -i 's/192.168.1.1/10.0.0.12/g' package/base-files/files/bin/config_generate
 #sed -i 's/net.netfilter.nf_conntrack_max=.*/net.netfilter.nf_conntrack_max=65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 #修正连接数（by ベ七秒鱼ベ）
 sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
-
+sed -i 's/TARGET_CFLAGS +=/TARGET_CFLAGS += -std=c99/g' feeds/packages/net/rp-pppoe/Makefile
 # themes添加（svn co 命令意思：指定版本如https://github）
 git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
